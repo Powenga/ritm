@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import '../Input.scss';
 
 type PropTypes = {
@@ -9,6 +9,7 @@ type PropTypes = {
   errors: { [index: string]: string };
   validateAttributes: { [index: string]: string | boolean | number };
   onChange: React.ChangeEventHandler;
+  handlePatternVisible?: Dispatch<SetStateAction<boolean>>;
 };
 
 const Input: React.FC<PropTypes> = ({
@@ -18,6 +19,7 @@ const Input: React.FC<PropTypes> = ({
   value,
   errors,
   onChange,
+
   validateAttributes
 }) => {
   return (
