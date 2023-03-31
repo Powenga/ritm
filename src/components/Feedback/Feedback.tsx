@@ -98,7 +98,7 @@ const Feedback: React.FC<PropTypes> = ({ onSubmit, isPreloaderEnabled, onPolicyC
           <TextArea
             name={InputNames.USER_MESSAGE}
             value={form.values[InputNames.USER_MESSAGE] || ''}
-            placeholderText="Комментарий"
+            placeholderText="Сообщение"
             errors={form.errors}
             onChange={form.handleChange}
           />
