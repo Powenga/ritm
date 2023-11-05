@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import LINKS from './constants';
 
 type Props = {
@@ -8,7 +9,8 @@ type Props = {
 };
 
 const Navigation: React.FC<Props> = ({ classNameNav, classNameLink, onClick }) => {
-  const linkElements = LINKS.map((item, index) => {
+  const { t } = useTranslation();
+  const linkElements = t('header.nav', { returnObjects: true }).map((item, index) => {
     const linkKey = `link${index}`;
     return (
       <a key={linkKey} href={item.href} className={classNameLink} onClick={onClick}>
