@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState } from 'react';
+import React, { Suspense, SyntheticEvent, useState } from 'react';
 import './App.scss';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -56,23 +56,25 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
-      <Main
-        onSubmitFeedback={onSubmitFeedback}
-        isPreloaderFeedbackEnabled={isPreloaderFeedbackEnabled}
-        onPolicyClick={onClickPolicy}
-      />
-      <Footer onClickPolicy={onClickPolicy} />
-      {isPopupOpened && (
-        <Popup
-          closePopup={closePopup}
-          title={popupProps.title}
-          message={popupProps.message}
-          component={popupProps.component}
+    <Suspense>
+      <div className="App">
+        <Header />
+        <Main
+          onSubmitFeedback={onSubmitFeedback}
+          isPreloaderFeedbackEnabled={isPreloaderFeedbackEnabled}
+          onPolicyClick={onClickPolicy}
         />
-      )}
-    </div>
+        <Footer onClickPolicy={onClickPolicy} />
+        {isPopupOpened && (
+          <Popup
+            closePopup={closePopup}
+            title={popupProps.title}
+            message={popupProps.message}
+            component={popupProps.component}
+          />
+        )}
+      </div>
+    </Suspense>
   );
 }
 

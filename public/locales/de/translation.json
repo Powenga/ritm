@@ -1,0 +1,11 @@
+{
+  "header": {
+    "logoAlt": "Ritm studio",
+    "nav": [
+      { "id": 0, "href": "#header", "text": "О компании" },
+      { "id": 1, "href": "#techs", "text": "Технологии" },
+      { "id": 2, "href": "#process", "text": "Процесс работы" },
+      { "id": 3, "href": "#contacts", "text": "Контакты" }
+    ]
+  }
+}
